@@ -15,6 +15,10 @@ import UserUpdate from "./pages/UserUpdate";
 import Login from "./pages/Login";
 import ChangePassword from "./pages/ChangePassword";
 import ChargingTable from "./pages/Charging/ChargingTable";
+import Vn5glanGpCreate from "./pages/Vn5glanGroupCreate";
+import Vn5glanGpList from "./pages/Vn5glanGroupList";
+import Vn5glanGpUpdate from "./pages/Vn5glanGroupUpdate";
+import Vn5glanGpRead from "./pages/Vn5glanGroupRead";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { LoginContext, User } from "./LoginContext";
 
@@ -153,6 +157,38 @@ export default function App() {
                 <ChargingTable />
               </ProtectedRoute>
             }
+          />
+                    <Route
+          path="/vn5glanGroup/create"
+          element={
+            <ProtectedRoute>
+              <Vn5glanGpCreate />
+            </ProtectedRoute>
+          }
+          />
+          <Route
+          path="/vn5glanGroup"
+          element={
+            <ProtectedRoute>
+              <Vn5glanGpList />
+            </ProtectedRoute>
+          }
+          />
+          <Route
+          path="/vn5glanGroup/update/:extGpId"
+          element={
+            <ProtectedRoute>
+              <Vn5glanGpUpdate />
+            </ProtectedRoute>
+          }
+          />
+          <Route
+          path="/vn5glanGroup/:extGpId"
+          element={
+            <ProtectedRoute>
+              <Vn5glanGpRead />
+            </ProtectedRoute>
+          }
           />
         </Routes>
       </BrowserRouter>

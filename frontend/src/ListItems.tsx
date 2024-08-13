@@ -5,6 +5,7 @@ import ListItemText from "@mui/material/ListItemText";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import PhoneAndroid from "@mui/icons-material/PhoneAndroid";
 import FontDownload from "@mui/icons-material/FontDownload";
+import GroupsIcon from '@mui/icons-material/Groups';
 import SupervisorAccountOutlinedIcon from "@mui/icons-material/SupervisorAccountOutlined";
 import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
 
@@ -69,6 +70,14 @@ export const MainListItems = () => {
             <AttachMoneyOutlinedIcon />
           </ListItemIcon>
           <ListItemText primary="UE CHARGING" />
+        </ListItemButton>
+      </Link>
+      <Link to="/vn5glanGroup" style={{ color: "inherit", textDecoration: "inherit" }}>
+        <ListItemButton>
+          <ListItemIcon>
+            <GroupsIcon />
+          </ListItemIcon>
+          <ListItemText primary="5GLAN Group Management" />
         </ListItemButton>
       </Link>
     </React.Fragment>

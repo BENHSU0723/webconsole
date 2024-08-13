@@ -43,6 +43,8 @@ type Configuration struct {
 	WebServer     *WebServer     `yaml:"webServer,omitempty" valid:"optional"`
 	Mongodb       *Mongodb       `yaml:"mongodb" valid:"required"`
 	NrfUri        string         `yaml:"nrfUri" valid:"required"`
+	NefUri        string         `yaml:"nefUri" valid:"required"`
+	AfId          string         `yaml:"afId" valid:"required"`
 	BillingServer *BillingServer `yaml:"billingServer,omitempty" valid:"required"`
 }
 

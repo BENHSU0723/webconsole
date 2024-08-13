@@ -26,6 +26,9 @@ type WEBUIContext struct {
 	NrfUri         string
 	OAuth2Required bool
 
+	NefUri string
+	AfId   string
+
 	NFManagementClient *Nnrf_NFManagement.APIClient
 	NFDiscoveryClient  *Nnrf_NFDiscovery.APIClient
 }
@@ -39,7 +42,8 @@ type NfOamInstance struct {
 func Init() {
 	webuiContext.NfInstanceID = uuid.New().String()
 	webuiContext.NrfUri = factory.WebuiConfig.Configuration.NrfUri
-
+	webuiContext.NefUri = factory.WebuiConfig.Configuration.NefUri
+	webuiContext.AfId = factory.WebuiConfig.Configuration.AfId
 	ManagementConfig := Nnrf_NFManagement.NewConfiguration()
 	ManagementConfig.SetBasePath(GetSelf().NrfUri)
 	webuiContext.NFManagementClient = Nnrf_NFManagement.NewAPIClient(ManagementConfig)

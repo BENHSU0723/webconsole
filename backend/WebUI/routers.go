@@ -243,4 +243,39 @@ var routes = Routes{
 		"/charging-data/:chargingMethod",
 		GetChargingData,
 	},
+
+	{
+		"Get All 5glan Groups",
+		http.MethodGet,
+		"/vn5glanGroup",
+		Get5glanGroups,
+	},
+
+	{
+		"Create a new 5GLAN VN Group",
+		http.MethodPost,
+		"/vn5glanGroup/:extGpId",
+		Post5glanVnGroup,
+	},
+
+	{
+		"Modify an existed 5glan Group Config",
+		http.MethodPut,
+		"/vn5glanGroup/:extGpId",
+		Put5glanVnGroup,
+	},
+
+	{
+		"Get an existed 5glan Group Config",
+		http.MethodGet,
+		"/vn5glanGroup/:extGpId",
+		GetAn5glanVnGroup,
+	},
+
+	{
+		"Delete an existed 5glan Group",
+		http.MethodDelete,
+		"/vn5glanGroup/:extGpId",
+		DeleteAn5glanVnGroup,
+	},
 }

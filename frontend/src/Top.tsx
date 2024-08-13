@@ -13,6 +13,10 @@ import UserList from "./pages/UserList";
 import UserCreate from "./pages/UserCreate";
 import UserUpdate from "./pages/UserUpdate";
 import ChangePassword from "./pages/ChangePassword";
+import Vn5glanGpCreate from "./pages/Vn5glanGroupCreate";
+import Vn5glanGpList from "./pages/Vn5glanGroupList";
+import Vn5glanGpUpdate from "./pages/Vn5glanGroupUpdate";
+import Vn5glanGpRead from "./pages/Vn5glanGroupRead";
 
 export default function Top() {
   return (
@@ -31,6 +35,10 @@ export default function Top() {
         <Route path="/tenant/:id/user" element={<UserList />} />
         <Route path="/tenant/:id/user/create" element={<UserCreate />} />
         <Route path="/tenant/:id/user/update/:uid" element={<UserUpdate />} />
+        <Route path="/vn5glanGroup/create" element={<Vn5glanGpCreate />} />
+        <Route path="/vn5glanGroup" element={<Vn5glanGpList />} />
+        <Route path="/vn5glanGroup/update/:extGpId" element={<Vn5glanGpUpdate />} />
+        <Route path="/vn5glanGroup/:extGpId" element={<Vn5glanGpRead />} />
         <Route path="/password" element={<ChangePassword />} />
         <Route path="/" element={<StatusList />} />
       </Routes>

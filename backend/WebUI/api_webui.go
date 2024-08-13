@@ -29,18 +29,19 @@ import (
 )
 
 const (
-	authSubsDataColl = "subscriptionData.authenticationData.authenticationSubscription"
-	amDataColl       = "subscriptionData.provisionedData.amData"
-	smDataColl       = "subscriptionData.provisionedData.smData"
-	smfSelDataColl   = "subscriptionData.provisionedData.smfSelectionSubscriptionData"
-	amPolicyDataColl = "policyData.ues.amData"
-	smPolicyDataColl = "policyData.ues.smData"
-	flowRuleDataColl = "policyData.ues.flowRule"
-	qosFlowDataColl  = "policyData.ues.qosFlow"
-	chargingDataColl = "policyData.ues.chargingData"
-	userDataColl     = "userData"
-	tenantDataColl   = "tenantData"
-	identityDataColl = "subscriptionData.identityData"
+	authSubsDataColl   = "subscriptionData.authenticationData.authenticationSubscription"
+	amDataColl         = "subscriptionData.provisionedData.amData"
+	smDataColl         = "subscriptionData.provisionedData.smData"
+	smfSelDataColl     = "subscriptionData.provisionedData.smfSelectionSubscriptionData"
+	amPolicyDataColl   = "policyData.ues.amData"
+	smPolicyDataColl   = "policyData.ues.smData"
+	flowRuleDataColl   = "policyData.ues.flowRule"
+	qosFlowDataColl    = "policyData.ues.qosFlow"
+	chargingDataColl   = "policyData.ues.chargingData"
+	userDataColl       = "userData"
+	tenantDataColl     = "tenantData"
+	identityDataColl   = "subscriptionData.identityData"
+	group5glanDataColl = "subscriptionData.group5GLANData"
 )
 
 var jwtKey = "" // for generating JWT

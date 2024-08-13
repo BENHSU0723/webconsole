@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import logo from "../free5gc_logo.png";
+import logo from "../free5gc-5glan.png";
 import axios from "../axios";
 import { useNavigate } from "react-router-dom";
 import { LoginContext } from "../LoginContext";

@@ -7,6 +7,8 @@ configuration:
     name: free5gc # name of the mongodb
     url: mongodb://localhost:27017 # a valid URL of the mongodb
   nrfUri: http://127.0.0.10:8000 # a valid URI of NRF
+  nefUri: http://localhost:8989 # an IP address of NEF
+  afId: 1
   webServer:
     scheme: http
     ipv4Address: 0.0.0.0

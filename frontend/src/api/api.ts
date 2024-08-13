@@ -23,6 +23,59 @@ import type { RequestArgs } from './base';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, BaseAPI, RequiredError, operationServerMap } from './base';
 
+
+export interface Var5gLANBrief{
+    /** 
+    * @type {string}
+    * @memberof Var5GLANParam
+    */  
+   'exterGroupId':string;
+   /** 
+    * @type {Array<string>}
+    * @memberof Var5GLANParam
+    */  
+   'gpsis': Array<string>;
+ }
+
+export interface Var5GLANParam{
+    /** 
+    * @type {string}
+    * @memberof Var5GLANParam
+    */  
+   'exterGroupId'?:string;
+   /** 
+    * @type {Array<string>}
+    * @memberof Var5GLANParam
+    */  
+   'gpsis'?: Array<string>;
+   /** 
+    * @type {string}
+    * @memberof Var5GLANParam
+    */  
+   'dnn'?: string;
+   /** 
+    * @type {Nssai}
+    * @memberof Var5GLANParam
+    */  
+   'snssai': Nssai;
+   /** 
+    * @type {string}
+    * @memberof Var5GLANParam
+    */  
+   'sessionType'?: string;
+   /** 
+    * @type {string}
+    * @memberof Var5GLANParam
+    */  
+     'aaaIpv4Addr'?:string;
+   /** 
+    * @type {string}
+    * @memberof Var5GLANParam
+    */  
+     'mtcProviderId'?:string
+ }
+
+
 /**
  * 
  * @export
