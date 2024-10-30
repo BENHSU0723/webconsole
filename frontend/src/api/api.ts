@@ -66,13 +66,61 @@ export interface Var5GLANParam{
    /** 
     * @type {string}
     * @memberof Var5GLANParam
-    */  
+    */
+   'subnetIP'?: string;
+   /** 
+    * @type {string}
+    * @memberof Var5GLANParam
+    */
      'aaaIpv4Addr'?:string;
    /** 
     * @type {string}
     * @memberof Var5GLANParam
     */  
-     'mtcProviderId'?:string
+     'mtcProviderId'?:string;
+     /** 
+    * @type {Array<MulticastGroup>}
+    * @memberof Var5GLANParam
+    */  
+     'multicastGroupList'?:Array<MulticastGroup>;
+ }
+
+ export interface MulticastGroup{
+    /** 
+    * @type {string}
+    * @memberof MulticastGroup
+    */  
+    'multiGroupId'?:string;
+    /** 
+    * @type {IpAddress}
+    * @memberof MulticastGroup
+    */  
+    'sourcePduSessIpAddr'?:IpAddress;
+    /** 
+    * @type {string}
+    * @memberof MulticastGroup
+    */  
+    'sourceUeGpsi'?:string;
+     /** 
+    * @type {IpAddress}
+    * @memberof MulticastGroup
+    */  
+     'groupIpAddr'?:IpAddress;
+      /** 
+    * @type {Array<string>}
+    * @memberof MulticastGroup
+    */  
+    'membersGpsi':Array<string>;
+     /** 
+    * @type {string}
+    * @memberof MulticastGroup
+    */  
+     'groupServiceType'?:string;
+      /** 
+    * @type {string}
+    * @memberof MulticastGroup
+    */  
+    'queryType'?:string;     
  }
 
 

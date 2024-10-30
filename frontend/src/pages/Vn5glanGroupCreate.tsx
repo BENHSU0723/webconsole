@@ -6,6 +6,7 @@ import axios from "../axios";
 import {
 Var5GLANParam,
   Nssai,
+  IpAddress
 } from "../api/api";
 
 import Dashboard from "../Dashboard";
@@ -44,6 +45,7 @@ interface VerifyResult {
 }
 
 import { DataObject, RawOff } from "@mui/icons-material";
+import { isIPv4 } from "net";
 
 // let isNewGroup = false;
 
@@ -154,6 +156,13 @@ export default function Vn5glanGpCreate() {
     setData({ ...data, mtcProviderId : event.target.value });
   };
 
+  const  handleChangeSubnetIp= (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ): void => {
+    data.subnetIP=event.target.value;
+    setData({...data});
+  };
+
   
   return (
     <Dashboard title="5GLAN Single Group Config Setting" >
@@ -252,6 +261,20 @@ export default function Vn5glanGpCreate() {
                     <MenuItem value="ETHERNET">ETHERNET</MenuItem>
                   </Select>
                 </FormControl>
+              </TableCell>
+            </TableRow>
+          </TableBody>
+          <TableBody>
+            <TableRow>
+              <TableCell>
+                <TextField
+                label="Group Belonged PDU Session IP addr"
+                variant="outlined"
+                required
+                fullWidth
+                value={data.subnetIP}
+                onChange={handleChangeSubnetIp}
+                />
               </TableCell>
             </TableRow>
           </TableBody>

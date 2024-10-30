@@ -59,13 +59,13 @@ export default function Vn5glanGpRead() {
         <Table>
           <TableBody>
             <TableRow>
-              <TableCell style={{ width: "40%" }}>5GLAN Vn Group External Group Id</TableCell>
+              <TableCell style={{ width: "60%" }}>5GLAN Vn Group External Group Id</TableCell>
               <TableCell>{data.exterGroupId}</TableCell>
             </TableRow>
           </TableBody>
           <TableBody>
             <TableRow>
-              <TableCell style={{ width: "40%" }}>5GLAN Vn Group Group Members(list of GPSIS)</TableCell>
+              <TableCell style={{ width: "60%" }}>5GLAN Vn Group Group Members(list of GPSIS)</TableCell>
                 {
                     data.gpsis?.map((value, idx) => (
                     <div key={idx}>{value}</div>
@@ -80,9 +80,9 @@ export default function Vn5glanGpRead() {
         <Table>
           <TableBody>
             <TableRow>
-            <TableCell style={{ width: "40%" }}>Group belonging SST of S-NSSAI</TableCell>
+            <TableCell style={{ width: "50%" }}>Group belonging SST of S-NSSAI</TableCell>
             <TableCell>{data.snssai.sst}</TableCell>
-            <TableCell style={{ width: "40%" }}>Group belonging SD of S-NSSAI</TableCell>
+            <TableCell style={{ width: "50%" }}>Group belonging SD of S-NSSAI</TableCell>
             <TableCell>{data.snssai.sd}</TableCell>
             </TableRow>
           </TableBody>
@@ -96,6 +96,12 @@ export default function Vn5glanGpRead() {
             <TableRow>
               <TableCell style={{ width: "40%" }}>Group Dedicated PDU Session Type(only support [IPV4] now)</TableCell>
               <TableCell>{data.sessionType}</TableCell>
+            </TableRow>
+          </TableBody>
+          <TableBody>
+            <TableRow>
+            <TableCell style={{ width: "40%" }}>Group PDU Sessions Belonged Subnet IP Addr</TableCell>
+            <TableCell>{data.subnetIP}</TableCell>
             </TableRow>
           </TableBody>
         </Table> 
@@ -116,6 +122,44 @@ export default function Vn5glanGpRead() {
             </TableRow>
           </TableBody>
         </Table>
+      </Card>
+      <h3>MulticastGroup List</h3>
+      <Card>
+      <Table>
+          <TableRow>
+            <TableCell>Multi Group ID</TableCell>
+            <TableCell>Source PDU Sess IP Addr</TableCell>
+            <TableCell>Source UE GPSI</TableCell>
+            <TableCell>Group IP Addr</TableCell>
+            <TableCell>Members GPSI</TableCell>
+            <TableCell>Group Service Type</TableCell>
+            {/* <TableCell>Query Type</TableCell> */}
+          </TableRow>
+        <TableBody>
+          {data.multicastGroupList?.map((group, index) => (
+            <TableRow key={index}>
+              <TableCell>{group.multiGroupId}</TableCell>
+              <TableCell>{group.sourcePduSessIpAddr?.ipv4Addr}</TableCell>
+              <TableCell>{group.sourceUeGpsi}</TableCell>
+              <TableCell>{group.groupIpAddr?.ipv4Addr}</TableCell>
+              <TableCell>
+                {group.membersGpsi && group.membersGpsi.length > 0 ? (
+                  group.membersGpsi.map((member, idx) => (
+                    <span key={idx}>
+                      {member}
+                      <br /> {/* 换行符 */}
+                    </span>
+                  ))
+                ) : (
+                  'No Members'
+                )}
+              </TableCell>
+              <TableCell>{group.groupServiceType}</TableCell>
+              {/* <TableCell>{group.queryType}</TableCell> */}
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
       </Card>
       <br />
       <Grid item xs={12}>

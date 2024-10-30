@@ -31,6 +31,10 @@ type Web5GLanParameters struct {
 	Snssai models.Snssai `json:"snssai"`
 
 	SessionType models.PduSessionType `json:"sessionType"`
+
+	SubnetIP string `json:"subnetIP"`
+
+	MulticastGroupList []modelBen.MulticastGroup `json:"multicastGroupList,omitempty"`
 }
 
 func Web5glanPpToModelPp(webPp Web5GLanParameters) (rspData modelBen.Model5GLanParametersProvision) {
@@ -45,6 +49,8 @@ func Web5glanPpToModelPp(webPp Web5GLanParameters) (rspData modelBen.Model5GLanP
 	rspData.Var5gLanParams.SessionType = modelBen.PduSessionType(webPp.SessionType)
 	rspData.Var5gLanParams.AaaIpv4Addr = webPp.AaaIpv4Addr
 	rspData.Var5gLanParams.MtcProviderId = webPp.AaaIpv4Addr
+	rspData.MulticastGroupList = webPp.MulticastGroupList
+	rspData.SubnetIP = modelBen.IpAddress{Ipv4Addr: webPp.SubnetIP}
 	return
 }
 
@@ -58,5 +64,7 @@ func Vn5glanCfgToWebPp(gpCfg modelBen.Model5GLanParametersProvision) (webPp Web5
 	webPp.SessionType = models.PduSessionType(gpCfg.Var5gLanParams.SessionType)
 	webPp.AaaIpv4Addr = gpCfg.Var5gLanParams.AaaIpv4Addr
 	webPp.MtcProviderId = gpCfg.Var5gLanParams.MtcProviderId
+	webPp.MulticastGroupList = gpCfg.MulticastGroupList
+	webPp.SubnetIP = gpCfg.SubnetIP.Ipv4Addr
 	return
 }

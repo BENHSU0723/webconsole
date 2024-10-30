@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -8,6 +9,7 @@ import FontDownload from "@mui/icons-material/FontDownload";
 import GroupsIcon from '@mui/icons-material/Groups';
 import SupervisorAccountOutlinedIcon from "@mui/icons-material/SupervisorAccountOutlined";
 import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
+import MultipleStopIcon from '@mui/icons-material/MultipleStop';
 
 import { Link } from "react-router-dom";
 import { LoginContext } from "./LoginContext";
@@ -72,14 +74,22 @@ export const MainListItems = () => {
           <ListItemText primary="UE CHARGING" />
         </ListItemButton>
       </Link>
-      <Link to="/vn5glanGroup" style={{ color: "inherit", textDecoration: "inherit" }}>
-        <ListItemButton>
-          <ListItemIcon>
-            <GroupsIcon />
-          </ListItemIcon>
-          <ListItemText primary="5GLAN Group Management" />
-        </ListItemButton>
-      </Link>
+        <Link to="/vn5glanGroup" style={{ color: "inherit", textDecoration: "inherit" }}>
+            <ListItemButton>
+            <ListItemIcon>
+                <GroupsIcon />
+            </ListItemIcon>
+            <ListItemText primary="5GLAN Group Management" />
+            </ListItemButton>
+        </Link>
+        {/* <Link to="/vn5glanGroup-multicast" style={{ color: "inherit", textDecoration: "inherit" }}>
+            <ListItemButton>
+            <ListItemIcon>
+                <MultipleStopIcon />
+            </ListItemIcon>
+            <ListItemText primary="5GLAN Group Multicast" />
+            </ListItemButton>
+        </Link> */}
     </React.Fragment>
   );
 };

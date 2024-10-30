@@ -5,7 +5,7 @@ go 1.21
 toolchain go1.22.4
 
 require (
-	github.com/BENHSU0723/openapi_public v0.0.0-20240718060556-814b9f82e803
+	github.com/BENHSU0723/openapi_public v0.0.0-20241024092603-3931a68f4b4a
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
 	github.com/fclairamb/go-log v0.4.1
 	github.com/free5gc/chf v1.0.1
